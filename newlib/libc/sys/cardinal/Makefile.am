@@ -12,13 +12,13 @@ endif
  
 lib_a_SOURCES =
 lib_a_LIBADD = $(extra_objs)
-EXTRA_lib_a_SOURCES = syscalls.c crt0.c # add more source files here if you split up
+EXTRA_lib_a_SOURCES = syscalls.c crt1.c # add more source files here if you split up
 lib_a_DEPENDENCIES = $(extra_objs)      # syscalls.c into multiple files
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
  
 if MAY_SUPPLY_SYSCALLS
-all: crt0.o
+all: crt1.o
 endif
  
 ACLOCAL_AMFLAGS = -I ../../..

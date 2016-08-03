@@ -414,6 +414,12 @@ case "${host}" in
 	;;
   i[34567]86-*-cardinal)
 	sys_dir=cardinal
+	unix_dir=unix
+	posix_dir=posix
+	have_crt0="no"
+	crt1=crt1.o
+	crt1_dir=libc/sys/${sys_dir}
+	newlib_cflags="${newlib_cflags} -DREENTRANT_SYSCALLS_PROVIDED -DHAVE_RENAME -DHAVE_SYSTEM -DHAVE_FCNTL"
 	;;
   cr16-*-*)
 	sys_dir=
